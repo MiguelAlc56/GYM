@@ -11,7 +11,7 @@ class empleadoInsert(BaseModel):
     Sexo: str
     Contraseña :str
     Roll:str|None='Recepcionsta'
-    Estaus:str|None='Activo'
+    Estatus:str|None='Activo'
 
 class Salida(BaseModel):
     descripcion: str

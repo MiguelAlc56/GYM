@@ -7,7 +7,7 @@ class Empleado(Base):
 
     idEmpleados = Column(Integer, primary_key=True, autoincrement=True)
     Contraseña=Column(String(45),nullable=False)
-    Roll=Column(String(45),nullable=False, Default="Recepcionista")
+    Roll=Column(String(45),nullable=False)
     Estatus = Column(String(45), nullable=False)
     id_persona = Column(Integer, ForeignKey('persona.idPersona'), nullable=False)
 

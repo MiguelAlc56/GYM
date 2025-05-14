@@ -40,7 +40,7 @@ def insertar_empleado(db: Session, cliente_data: empleadoInsert):
     return salida
 
 def obtener_empleado_por_id(db: Session, id_empleado: int):
-    return db.query(Empleado).filter(Empleado.idClientes == id_empleado).first()
+    return db.query(Empleado).filter(Empleado.idEmpleados == id_empleado).first()
 
 def obtener_todos_los_empleados(db: Session) -> List[Empleado]:
     return db.query(Empleado).all()
@@ -48,7 +48,7 @@ def obtener_todos_los_empleados(db: Session) -> List[Empleado]:
 def actualizar_empleado(db: Session, id_empleado: int, empleado_data: EmpleadoUpdate):
     salida = Salida(descripcion="", estatus="")
     try:
-        empleado = db.query(Empleado).filter(Empleado.idClientes == id_empleado).first()
+        empleado = db.query(Empleado).filter(Empleado.idEmpleados == id_empleado).first()
         if not empleado:
             salida.descripcion = f"No se encontró ningún empleado con el id {id_empleado}"
             salida.estatus = "Fallido"
@@ -107,4 +107,4 @@ def eliminar_empleado(db: Session, id_empleado: int):
         print(ex)
         salida.descripcion = f"El empleado {id_empleado} no ha podido ser eliminado"
         salida.estatus = "Fallido"
-    return Salida
+    return salida
