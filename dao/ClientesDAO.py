@@ -104,4 +104,4 @@ def eliminar_cliente(db: Session, id_cliente: int):
         print(ex)
         salida.descripcion = f"El cliente {id_cliente} no ha podido ser eliminado"
         salida.estatus = "Fallido"    
-    return Salida
+    return salida
