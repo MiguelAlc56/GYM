@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
 from sqlalchemy.orm import relationship
-from .PersonaSchema import Base, Persona
+#from .PersonaSchema import Base, Persona
+from dao.database import Base
 
 class Empleado(Base):
     __tablename__ = 'empleados'

@@ -1,5 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 # Datos de conexión a MySQL
 DATABASE_URL = "mysql+pymysql://root:JvtT6kDS2dcSlDL@localhost:3306/gym"
